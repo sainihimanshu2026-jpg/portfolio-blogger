@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<b:template xmlns:b="http://www.google.com/2005/gml/b">
+  <b:include data='blog' name='all-head-content'/>
+  <b:skin><![CDATA[
+    /* Blogger custom CSS will be injected here */
+  ]]></b:skin>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Himanshu Saini Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+    <style type="text/css"><![CDATA[
+      :root { --primary: #1a1a2e; --secondary: #16213e; --accent: #0f3460; --highlight: #e94560; --text: #fff; --bg: #232946; --transition: 0.4s cubic-bezier(.4,0,.2,1); }
+      [data-theme="light"] { --primary: #fff; --secondary: #f4f4f4; --accent: #e94560; --highlight: #232946; --text: #232946; --bg: #fff; }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); transition: background var(--transition), color var(--transition); min-height: 100vh; overflow-x: hidden; }
+      header { background: var(--primary); padding: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; transition: background var(--transition); }
+      .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+      nav { display: flex; justify-content: space-between; align-items: center; }
+      .logo { font-size: 2rem; font-weight: 700; color: var(--highlight); letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: color var(--transition); }
+      .nav-links { display: flex; gap: 2rem; }
+      .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 1.1rem; position: relative; transition: color var(--transition); }
+      .nav-links a::after { content: ''; display: block; width: 0; height: 2px; background: var(--highlight); transition: width 0.3s; position: absolute; left: 0; bottom: -4px; }
+      .nav-links a:hover::after { width: 100%; }
+      .theme-toggle { background: var(--accent); border: none; color: var(--text); padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 1rem; margin-left: 1rem; transition: background var(--transition), color var(--transition); }
+      main { padding: 3rem 0 2rem 0; animation: fadeIn 1.2s; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+      .hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
+      .hero img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--highlight); box-shadow: 0 4px 24px rgba(0,0,0,0.12); animation: popIn 1.2s; }
+      @keyframes popIn { 0% { transform: scale(0.7); opacity: 0; } 80% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(1); } }
+      .hero h1 { font-size: 2.5rem; font-weight: 700; color: var(--highlight); letter-spacing: 1px; }
+      .hero p { font-size: 1.2rem; color: var(--text); max-width: 600px; margin: 0 auto; opacity: 0.9; }
+      .hero .cta { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center; }
+      .cta a, .cta button { background: var(--highlight); color: #fff; border: none; padding: 0.8rem 2rem; border-radius: 30px; font-size: 1.1rem; font-weight: 600; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); cursor: pointer; transition: background var(--transition), color var(--transition), transform 0.2s; }
+      .cta a:hover, .cta button:hover { background: var(--accent); color: var(--highlight); transform: translateY(-2px) scale(1.04); }
+      .section { margin: 3rem 0; padding: 2rem 0; background: var(--secondary); border-radius: 18px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: background var(--transition); animation: fadeIn 1.2s; }
+      .section-title { font-size: 2rem; color: var(--highlight); margin-bottom: 1.5rem; text-align: center; font-weight: 700; letter-spacing: 1px; }
+      .skills-list { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 1rem; }
+      .skill { background: var(--accent); color: #fff; padding: 1rem 2rem; border-radius: 20px; font-size: 1.1rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background var(--transition), color var(--transition), transform 0.2s; cursor: pointer; }
+      .skill:hover { background: var(--highlight); color: var(--primary); transform: scale(1.08); }
+      .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem; margin-top: 2rem; }
+      .project-card { background: var(--primary); border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; animation: fadeIn 1.2s; }
+      .project-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+      .project-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--highlight); }
+      .project-card .project-content { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+      .project-card h3 { color: var(--highlight); font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 700; }
+      .project-card p { color: var(--text); font-size: 1rem; opacity: 0.9; margin-bottom: 1rem; }
+      .project-card a { color: var(--highlight); text-decoration: underline; font-weight: 600; align-self: flex-start; transition: color var(--transition); }
+      .project-card a:hover { color: var(--accent); }
+      .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem; }
+      .testimonial { background: var(--primary); border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; animation: fadeIn 1.2s; }
+      .testimonial img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--highlight); }
+      .testimonial h4 { color: var(--highlight); font-size: 1.1rem; margin-bottom: 0.3rem; font-weight: 700; }
+      .testimonial p { color: var(--text); font-size: 1rem; opacity: 0.9; margin-bottom: 0.5rem; }
+      .testimonial .role { color: var(--accent); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
+      .contact-form { max-width: 500px; margin: 0 auto; background: var(--primary); padding: 2rem 1.5rem; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 1.2rem; animation: fadeIn 1.2s; }
+      .contact-form input, .contact-form textarea { padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--accent); font-size: 1rem; background: var(--secondary); color: var(--text); transition: border var(--transition), background var(--transition); resize: none; }
+      .contact-form input:focus, .contact-form textarea:focus { border: 1.5px solid var(--highlight); outline: none; background: var(--bg); }
+      .contact-form button { background: var(--highlight); color: #fff; border: none; padding: 0.8rem 2rem; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background var(--transition), color var(--transition), transform 0.2s; }
+      .contact-form button:hover { background: var(--accent); color: var(--highlight); transform: translateY(-2px) scale(1.04); }
+      footer { background: var(--primary); color: var(--text); padding: 2rem 0 1rem 0; text-align: center; margin-top: 3rem; border-radius: 18px 18px 0 0; box-shadow: 0 -2px 12px rgba(0,0,0,0.08); transition: background var(--transition); }
+      .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; }
+      .footer-links a { color: var(--highlight); text-decoration: none; font-weight: 600; transition: color var(--transition); }
+      .footer-links a:hover { color: var(--accent); }
+      .social-links { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 1rem; }
+      .social-links a { color: var(--text); font-size: 1.5rem; transition: color var(--transition); }
+      .social-links a:hover { color: var(--highlight); }
+      @media (max-width: 900px) { .projects, .testimonials { grid-template-columns: 1fr; } }
+      @media (max-width: 600px) { .container { width: 98%; } .hero h1 { font-size: 2rem; } .section-title { font-size: 1.3rem; } .nav-links { gap: 1rem; } .skills-list { gap: 0.7rem; } .footer-links { gap: 1rem; } }
+    ]]></style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo" onclick="showSection('home')">HIMANSHU SAINI</div>
+          <div class="nav-links">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('projects')">Projects</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+            <a href="#" onclick="showSection('privacy')">Privacy</a>
+            <a href="#" onclick="showSection('terms')">Terms</a>
+          </div>
+          <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="hero section">
+        <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7deca_e2bf76c9-cac9-4ce8-a41d-f90cbd771b3d.avif" alt="Himanshu Saini Photo"/>
+        <h1>Himanshu Saini</h1>
+        <p>Web Designer &amp; Developer | UI/UX Enthusiast | Building bold, modern, and mobile-ready websites to help you stand out online.</p>
+        <div class="cta">
+          <a href="#" onclick="showSection('contact')">Hire Me</a>
+          <a href="#" onclick="showSection('projects')">See Work</a>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="section" style="display:none;">
+        <h2 class="section-title">About Me</h2>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
+          <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7deca_e2bf76c9-cac9-4ce8-a41d-f90cbd771b3d.avif" alt="Himanshu Saini" style="width:120px;height:120px;border-radius:50%;border:3px solid var(--highlight);"/>
+          <p style="max-width:600px;text-align:center;">Hi! I'm <b>Himanshu Saini</b>, a passionate web designer and developer with a knack for creating visually stunning and highly functional websites. My expertise includes HTML, CSS, JavaScript, UI/UX, and responsive design. I love turning ideas into digital experiences that delight users and drive results. Let's build something extraordinary together!</p>
+          <div class="skills-list">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">UI/UX</div>
+            <div class="skill">Webflow</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">Animation</div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section id="projects" class="section" style="display:none;">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+          <div class="project-card">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7dee4_9e82fe9d-019e-4fdc-b64a-c7c5e2821de2.avif" alt="Portfolio Showcase"/>
+            <div class="project-content">
+              <h3>Portfolio Showcase</h3>
+              <p>A bold, mobile-ready portfolio built to highlight your skills and attract new clients.</p>
+              <a href="#" target="_blank">Preview</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7debe_25eb4b55-607f-46f6-aba0-1fcf0b7b78fb.avif" alt="SaaS Dashboard"/>
+            <div class="project-content">
+              <h3>SaaS Dashboard</h3>
+              <p>Modern dashboard UI for B2B SaaS, featuring clean design and smooth user experience.</p>
+              <a href="#" target="_blank">Preview</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7ded3_c8777a62-1b6a-4d60-990b-d6dce7a70dce.avif" alt="Game Dev Studio"/>
+            <div class="project-content">
+              <h3>Game Dev Studio</h3>
+              <p>Creative website for a game development company, with interactive visuals and animations.</p>
+              <a href="#" target="_blank">Preview</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7de9d_6013cfaa-b5e5-4593-832a-3c9498e3b504.avif" alt="Legal Tech"/>
+            <div class="project-content">
+              <h3>Legal Tech</h3>
+              <p>Website for a legal tech startup, featuring code-focused design and modern UI.</p>
+              <a href="#" target="_blank">Preview</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="section" style="display:none;">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="testimonials">
+          <div class="testimonial">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7deba_4745b7f9-7018-443b-88c0-f4b371a0d390.avif" alt="Jamie Patel"/>
+            <h4>Jamie Patel</h4>
+            <div class="role">InnovateX</div>
+            <p>Seamless process, clear updates, and a vibrant site. Delivered on time and exceeded our expectations.</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7def1_f7e52028-c725-4d3c-a664-5a99dbbb9d2e.avif" alt="Morgan Ellis"/>
+            <h4>Morgan Ellis</h4>
+            <div class="role">BrightLayer</div>
+            <p>Creative solutions and strong attention to detail. Communication was always prompt and helpful.</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7de96_f6d7a7c1-9a30-43a3-b089-eb18ccb33650.avif" alt="Riley Shaw"/>
+            <h4>Riley Shaw</h4>
+            <div class="role">CodeNest</div>
+            <p>Modern, tech-inspired design with fast turnaround. Great collaboration and support throughout.</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7dec1_7673c2c2-8a43-4cc9-b3a4-9083900e69a5.avif" alt="Taylor Quinn"/>
+            <h4>Taylor Quinn</h4>
+            <div class="role">PixelForge</div>
+            <p>Excellent technical skills and unique design. The portfolio stands out and is visually engaging.</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7deea_638b3249-4ddc-495f-b15a-362c51d46226.avif" alt="Jordan Avery"/>
+            <h4>Jordan Avery</h4>
+            <div class="role">WebPilot</div>
+            <p>Highly recommend for a modern web presence. Very satisfied with the results and support.</p>
+          </div>
+          <div class="testimonial">
+            <img src="https://cdn.prod.website-files.com/699d89a895b20cd0bc619dbf/699d8a0879981377f6b7decd_deb4d636-380a-4aa8-bfb0-7f67beb66525.avif" alt="Casey Monroe"/>
+            <h4>Casey Monroe</h4>
+            <div class="role">NextFrame</div>
+            <p>Professional, responsive, and reliable. The website matched our vision and was delivered efficiently.</p>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="section" style="display:none;">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form" onsubmit="sendMessage(event)">
+          <input type="text" id="name" placeholder="Your Name" required="true"/>
+          <input type="email" id="email" placeholder="Your Email" required="true"/>
+          <textarea id="message" rows="5" placeholder="Your Message" required="true"></textarea>
+          <button type="submit">Send Message</button>
+          <div id="contact-status" style="margin-top:1rem;font-size:1rem;"></div>
+        </form>
+      </section>
+      <!-- Privacy Policy Section -->
+      <section id="privacy" class="section" style="display:none;">
+        <h2 class="section-title">Privacy Policy</h2>
+        <iframe src="https://www.termsfeed.com/live/64fc293d-7e8a-4513-8e20-ce2f312112cc" style="width:100%;height:60vh;border:none;border-radius:12px;"></iframe>
+      </section>
+      <!-- Terms &amp; Conditions Section -->
+      <section id="terms" class="section" style="display:none;">
+        <h2 class="section-title">Terms &amp; Conditions</h2>
+        <iframe src="https://www.termsfeed.com/live/a2726968-cd70-4338-ab01-6c5194f4f48d" style="width:100%;height:60vh;border:none;border-radius:12px;"></iframe>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-links">
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#" onclick="showSection('privacy')">Privacy</a>
+        <a href="#" onclick="showSection('terms')">Terms</a>
+      </div>
+      <div class="social-links">
+        <a href="https://facebook.com/" target="_blank" title="Facebook"><span aria-hidden="true">&#x1F426;</span></a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram"><span aria-hidden="true">&#x1F33A;</span></a>
+        <a href="https://twitter.com/" target="_blank" title="Twitter"><span aria-hidden="true">&#x1F426;</span></a>
+        <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><span aria-hidden="true">&#x1F4BB;</span></a>
+        <a href="https://youtube.com/" target="_blank" title="YouTube"><span aria-hidden="true">&#x1F3A5;</span></a>
+      </div>
+      <div style="margin-top:1rem;opacity:0.7;">© 2026 Himanshu Saini Portfolio</div>
+    </footer>
+    <script type="text/javascript"><![CDATA[
+      function showSection(section) {
+        var sections = ['home','about','projects','testimonials','contact','privacy','terms'];
+        sections.forEach(function(id){
+          var el = document.getElementById(id);
+          if (el) el.style.display = (id === section) ? '' : 'none';
+        });
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+      function toggleTheme() {
+        var html = document.documentElement;
+        var isLight = html.getAttribute('data-theme') === 'light';
+        html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+        document.querySelector('.theme-toggle').textContent = isLight ? '🌙' : '☀️';
+      }
+      (function(){
+        document.documentElement.setAttribute('data-theme','dark');
+      })();
+      function sendMessage(e) {
+        e.preventDefault();
+        document.getElementById('contact-status').textContent = 'Thank you for your message! (Demo only)';
+        setTimeout(function(){
+          document.getElementById('contact-status').textContent = '';
+          document.getElementById('name').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('message').value = '';
+        }, 3000);
+      }
+      showSection('home');
+    ]]></script>
+  </body>
+</b:template>
